@@ -5,7 +5,9 @@ import time
 from fabric.api import run, put, env
 from os.path import exists
 
+
 env.hosts = ['35.190.134.180', '35.231.136.116']
+
 
 def do_pack():
     """do_pack prototype to generate an .tgz"""
@@ -18,6 +20,7 @@ def do_pack():
         return None
     else:
         return "versions/web_static_{}.tgz".format(created)
+
 
 def do_deploy(archive_path):
     """ Fabric script that distributes an archive to your web servers"""
@@ -39,6 +42,7 @@ def do_deploy(archive_path):
         except:
             return False
     return False
+
 
 def deploy():
     """Fabric script that creates and distributes
