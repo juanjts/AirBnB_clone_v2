@@ -2,7 +2,9 @@
 """starts a Flask web application"""
 from flask import Flask
 
+
 app = Flask(__name__)
+
 
 @app.route('/', strict_slashes=False)
 def hello_HBNB():
@@ -15,10 +17,12 @@ def hbnb():
     '''function to display "HBNB" after /hbnb'''
     return "HBNB"
 
+
 @app.route('/c/<text>', strict_slashes=False)
 def c(text):
     '''funtion that display "C " + value of text = <text>'''
     return 'C {}'.format(text).replace('_', ' ')
+
 
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
